@@ -11,8 +11,41 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
-    <header class="header"></header>
-    <main></main>
+    <header class="header">
+      <h1 class="header__logo">&lt;/HTML&gt;</h1>
+      <h2 class="header__title">Закрывающий тег</h2>
+    </header>
+    <main class="main">
+      <article class="card">
+        <h3 class="card__header">Фритрек и нулевой спринт: Подготовка к работе</h3>
+        <div class="card__content">
+          <img class="card__image" src="./images/background.png" alt="Описание изображения">
+          <span class="card__label">&lt;/HTML&gt;</span>
+        </div>
+        <div class="card__text">
+          <p>Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно, подумать, как новые знания могут повлиять на ваше будущее.</p>
+          <p>Место для ваших воспоминаний о начале обучения.</p>
+        </div>
+        <div class="card__footer">
+          <div class="card__like-section">
+            <button class="card__icon-button" aria-label="Лайк">
+              <svg class="like-icon" viewBox="0 0 138 38">
+                <path d="M32.75 21.25V9H36.25V19.5H43.25V21.25H32.75ZM50.25 10.75V9H53.75V10.75H50.25ZM46.75 21.25V19.5H50.25V14.25H48.5V12.5H53.75V19.5H57.25V21.25H46.75ZM59 21.25V9H62.5V16H66V14.25H67.75V12.5H71.25V14.25H69.5V16H67.75V17.75H69.5V19.5H71.25V21.25H67.75V19.5H66V17.75H62.5V21.25H59ZM74.75 21.25V19.5H73V14.25H74.75V12.5H83.5V14.25H85.25V17.75H76.5V19.5H83.5V21.25H74.75ZM76.5 16H81.75V14.25H76.5V16Z" fill="black"/>
+              </svg>
+            </button>
+            <button class="card__like-button button">
+              <span class="button__text">Like</span>
+            </button>
+          </div>
+        </div>
+      </article>
+      <button class="save-button button">
+        <svg width="28" height="28" viewBox="0 0 39 39">
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+        <span class="button__text">Сохранить на память</span>
+      </button>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
