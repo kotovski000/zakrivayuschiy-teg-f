@@ -23,8 +23,7 @@
 }
 
 .header {
-  width: 375px;
-  height: 327px;
+  width: var(--section-width);
   margin-top: 100px;
   margin-bottom: 100px;
   padding: 120px 14px;
@@ -48,12 +47,6 @@
   text-transform: uppercase;
 }
 
-.button {
-  font-family: var(--accent-font);
-  position: relative;
-  overflow: hidden;
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -61,10 +54,12 @@
 }
 
 .card {
-  width: 100%;
+  width: var(--section-width);
   margin: 0 auto;
   border: 2px solid currentColor;
   background-color: var(--bg-color);
+  overflow: hidden;
+
 }
 
 .card__header {
@@ -120,15 +115,14 @@ p {
   background: none;
   border: none;
   cursor: pointer;
-  margin-bottom: 6px;
-  margin-top: 8px;
-  margin-right: 2px;
-
+  margin-inline-start: 165px;
+  margin-block-start: 5px;
 }
 .card__like-button{
   background: none;
   cursor: pointer;
-  border-bottom: 2px solid currentColor;
+  border: 2px solid currentColor;
+  margin-top: 5px;
   width: 130px;
   height: 38px;
 }
@@ -139,7 +133,7 @@ p {
   font-size: 14px;
   display: flex;
   justify-content: center;
-  padding: 12px 37px;
+  padding: 5px 37px;
 }
 
 
@@ -163,7 +157,6 @@ p {
   margin-right: 35px;
   margin-left: 35px;
   margin-bottom: 102px;
-  padding-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -172,11 +165,16 @@ p {
   border: 2px solid currentColor;
 }
 
-.save-button__text{
-  margin-top: 8px;
-  font-weight: var(--text-weight);
-  font-size: 14px;
+.save-button svg{
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
 
+.save-button__text{
+  margin-bottom: 15px;
+  font-weight: var(--text-weight);
+  font-family: var(--accent-font);
+  font-size: 14px;
 }
 
 
@@ -230,13 +228,62 @@ p {
   cursor: pointer;
 }
 
-/* Эффекты при фокусе для Like, "Сохранить на память" и "ОК" */
+
+.card__like-button,
+.save-button,
+.modal__button {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
 .card__like-button:focus,
 .save-button:focus,
 .modal__button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--accent-color);
-  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button::before,
+.save-button::before,
+.modal__button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before,
+.save-button:hover::before,
+.modal__button:hover::before {
+  transform: translateX(0);
+}
+
+.button__text,
+.save-button__text,
+.modal__text {
+  position: relative;
+  z-index: 1;
+  color: var(--bg-color);
+  mix-blend-mode: difference;
+}
+
+
+.card__icon-button {
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus{
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
 }
 
 
