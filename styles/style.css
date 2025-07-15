@@ -26,7 +26,7 @@
   width: var(--section-width);
   margin-top: 100px;
   margin-bottom: 100px;
-  padding: 120px 14px;
+  padding: 128px ;
   font-family: var(--accent-font);
   display: flex;
   flex-direction: column;
@@ -37,13 +37,13 @@
 }
 
 .header__logo {
-  font-size: 49px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
 .header__title {
-  font-size: 14px;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
 }
 
@@ -55,11 +55,10 @@
 
 .card {
   width: var(--section-width);
-  margin: 0 auto;
+  margin-inline: auto;
   border: 2px solid currentColor;
   background-color: var(--bg-color);
   overflow: hidden;
-
 }
 
 .card__header {
@@ -83,9 +82,11 @@
 .card__label {
   position: absolute;
   top: 1.5625rem;
-  right: 0.8rem;
+  right: 1.5rem;
   font-family: var(--accent-font);
   font-size: 14px;
+  z-index: 1;
+  color: #000000;
   opacity: 0.5;
   mix-blend-mode: hard-light;
   text-shadow:
@@ -95,11 +96,13 @@
           0 -1px var(--stroke-color);
 }
 
-.card__text{
+.card__text {
   font-weight: var(--text-weight);
   font-size: 18px;
   margin: 25px 25px 0 25px;
+  line-height: 21px;
 }
+
 p {
   margin-bottom: 25px;
 }
@@ -112,141 +115,86 @@ p {
 }
 
 .card__icon-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-inline-start: 165px;
-  margin-block-start: 5px;
-}
-.card__like-button{
-  background: none;
-  cursor: pointer;
-  border: 2px solid currentColor;
-  margin-top: 5px;
-  width: 130px;
-  height: 38px;
-}
-
-.button__text{
-  font-weight: var(--text-weight);
-  font-family: var(--accent-font);
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  padding: 5px 37px;
-}
-
-
-@supports ((text-stroke: 0.5px var(--stroke-color)) or (-webkit-text-stroke: 0.5px var(--stroke-color))) {
-  .card__label {
-    -webkit-text-stroke: 0.5px var(--stroke-color);
-    text-stroke: 0.5px var(--stroke-color);
-    text-shadow: none;
-  }
-}
-.footer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.save-button{
-  width: 306px;
-  height: 80px;
-  margin-right: 35px;
-  margin-left: 35px;
-  margin-bottom: 102px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bg-color);
-  border: 2px solid currentColor;
-}
-
-.save-button svg{
-  margin-top: 15px;
-  margin-bottom: 8px;
-}
-
-.save-button__text{
-  margin-bottom: 15px;
-  font-weight: var(--text-weight);
-  font-family: var(--accent-font);
-  font-size: 14px;
-}
-
-
-.modal {
-  border: 2px solid currentColor;
+  display: grid;
+  border: 2px solid transparent;
   padding: 0;
-  max-width: 500px;
-  width: 90%;
-}
-
-.modal::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal[open] {
-  display: flex;
-}
-
-.modal__content {
-  padding: 2.5rem;
-  width: 100%;
-}
-
-.modal__columns {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.modal__column {
-  flex: 1;
-}
-
-.modal__icon {
-  margin-bottom: 1rem;
-}
-
-.modal__text {
-  margin: 0;
-  color: #000000;
-  font-weight: var(--text-weight);
-  font-family: var(--accent-font);
-}
-
-.modal__button {
-  width: 100%;
-  background-color: var(--bg-color);
-  color: #000000;
-  border: 2px solid currentColor;
-  font-size: 14px;
+  background: transparent;
+  transition: border-color 0.3s ease;
   cursor: pointer;
+  appearance: none;
+  background: none;
+  margin-top: 4px;
+  margin-right: 4px;
+
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
 
-.card__like-button,
-.save-button,
-.modal__button {
+.card__icon-button:focus-visible {
+  border: 2px solid currentColor;
+}
+
+.card__like-button {
+  background: none;
+  cursor: pointer;
+  border: 2px solid currentColor;
+  margin-top: 4px;
+  width: 130px;
+  height: 40px;
+}
+
+.save-button {
+  width: 335px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  border: 2px solid currentColor;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+}
+
+.save-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.save-button-text {
+  position: relative;
+  z-index: 1;
+  color: var(--bg-color);
+  mix-blend-mode: difference;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-align: left;
+}
+
+.save-button svg {
+  margin-bottom: 11px;
+  width: 21px;
+  height: 21px;
+  margin-right: 8px;
+  margin-left: 10px;
+
+}
+
+/* Общие стили для кнопок */
+
+.button {
   position: relative;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
 
-.card__like-button:focus,
-.save-button:focus,
-.modal__button:focus {
+.button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--accent-color);
 }
 
-.card__like-button::before,
-.save-button::before,
-.modal__button::before {
+.button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -258,36 +206,82 @@ p {
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before,
-.save-button:hover::before,
-.modal__button:hover::before {
+.button:hover::before {
   transform: translateX(0);
 }
 
-.button__text,
-.save-button__text,
-.modal__text {
+.button-text {
   position: relative;
   z-index: 1;
   color: var(--bg-color);
   mix-blend-mode: difference;
+  font-family: var(--accent-font);
+  font-size: 14px;
 }
 
+/* Стили для модальнго окна */
 
-.card__icon-button {
-  transition: border 0.3s ease;
+.modal {
+  border: 2px solid currentColor;
+  padding: 0;
+  max-inline-size: 353px;
+  background: var(--bg-color);
+  box-sizing: border-box;
+  font-family: var(--accent-font);
+  color: #000;
 }
 
-.card__icon-button:focus{
-  outline: none;
+.modal::backdrop {
+  background-color: rgba(0,0,0,0.75);
 }
 
-.card__icon-button:focus-visible {
-  border: 2px solid var(--accent-color);
+.modal__content {
+  padding: 24px 16px;
 }
 
+.modal__icon {
+  margin-top: 12px;
+  margin-right: 10px;
+}
+
+.modal__columns {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 12px;
+}
+
+.modal__column:first-child {
+  display: flex;
+  align-items: flex-start;
+}
+
+.modal__text {
+  margin-bottom: 0;
+  margin-right: 30px;
+  font-weight: var(--text-weight);
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal__button {
+  width: 100%;
+  background: var(--bg-color);
+  color: #000;
+  border: 2px solid currentColor;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--text-weight);
+  padding: 9px 0 7px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-transform: uppercase;
+}
 
 /* Фильтры для изображений */
+
 .filter-grayscale {
   filter: grayscale(0.8);
 }
@@ -304,14 +298,69 @@ p {
   filter: blur(10px);
 }
 
-.filter-hue-rotate{
-  filter: hue-rotate(30deg) ;
+.filter-hue-rotate {
+  filter: hue-rotate(30deg);
 }
 
 .filter-invert {
-  filter: invert(80%) ;
+  filter: invert(80%);
 }
 
 .filter-multiple {
   filter: hue-rotate(90deg) contrast(0.4) saturate(1.5) blur(2px);
+}
+
+@supports ((text-stroke: 0.5px var(--stroke-color)) or (-webkit-text-stroke: 0.5px var(--stroke-color))) {
+  .card__label {
+    -webkit-text-stroke: 0.5px var(--stroke-color);
+    text-stroke: 0.5px var(--stroke-color);
+    text-shadow: none;
+  }
+}
+
+@media (width <= 375px) {
+  .header{
+    width: var(--mobile-widdth);
+    height: 327px;
+    padding: 120px 14px;
+
+  }
+
+  .card__label {
+    position: absolute;
+    top: 1.5625rem;
+    right: 0.8rem;
+  }
+
+  .save-button {
+    width: 306px;
+    height: 84px;
+    margin-right: 34px;
+    margin-left: 34px;
+    margin-bottom: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    border: 2px solid currentColor;
+  }
+
+  .save-button svg {
+    width: 28px;
+    height: 28px;
+    margin-left: 9px;
+    margin-bottom: 10px;
+  }
+
+  .save-button-text{
+    position: relative;
+    z-index: 1;
+    color: var(--bg-color);
+    mix-blend-mode: difference;
+    font-family: var(--accent-font);
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
 }

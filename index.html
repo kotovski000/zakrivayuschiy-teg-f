@@ -46,8 +46,8 @@
                   fill="var(--heart-sparks)" opacity="0"/>
           </svg>
         </button>
-        <button type="button" class="card__like-button ">
-        <span class="button__text">Like</span>
+        <button type="button" class="card__like-button button">
+        <span class="button-text">Like</span>
       </button>
       </div>
   </article>
@@ -78,8 +78,8 @@
                   fill="var(--heart-sparks)" opacity="0"/>
           </svg>
         </button>
-        <button type="button" class="card__like-button ">
-          <span class="button__text">Like</span>
+        <button type="button" class="card__like-button button">
+          <span class="button-text">Like</span>
         </button>
       </div>
   </article>
@@ -110,8 +110,8 @@
                   fill="var(--heart-sparks)" opacity="0"/>
           </svg>
         </button>
-        <button type="button" class="card__like-button ">
-          <span class="button__text">Like</span>
+        <button type="button" class="card__like-button button">
+          <span class="button-text">Like</span>
         </button>
       </div>
   </article>
@@ -142,8 +142,8 @@
                   fill="var(--heart-sparks)" opacity="0"/>
           </svg>
         </button>
-        <button type="button" class="card__like-button ">
-          <span class="button__text">Like</span>
+        <button type="button" class="card__like-button button">
+          <span class="button-text">Like</span>
         </button>
       </div>
   </article>
@@ -174,8 +174,8 @@
                   fill="var(--heart-sparks)" opacity="0"/>
           </svg>
         </button>
-        <button type="button" class="card__like-button ">
-          <span class="button__text">Like</span>
+        <button type="button" class="card__like-button button">
+          <span class="button-text">Like</span>
         </button>
       </div>
   </article>
@@ -206,8 +206,8 @@
                   fill="var(--heart-sparks)" opacity="0"/>
           </svg>
         </button>
-        <button type="button" class="card__like-button ">
-          <span class="button__text">Like</span>
+        <button type="button" class="card__like-button button">
+          <span class="button-text">Like</span>
         </button>
       </div>
   </article>
@@ -238,8 +238,8 @@
                   fill="var(--heart-sparks)" opacity="0"/>
           </svg>
         </button>
-        <button type="button" class="card__like-button ">
-          <span class="button__text">Like</span>
+        <button type="button" class="card__like-button button">
+          <span class="button-text">Like</span>
         </button>
       </div>
   </article>
@@ -270,33 +270,35 @@
                   fill="var(--heart-sparks)" opacity="0"/>
           </svg>
         </button>
-        <button type="button" class="card__like-button ">
-          <span class="button__text">Like</span>
+        <button type="button" class="card__like-button button ">
+          <span class="button-text">Like</span>
         </button>
       </div>
   </article>
+  <div class="save-button-wrapper">
     <button type="button" class="save-button button" onclick="document.getElementById('save-dialog').showModal()">
-      <svg width="39" height="39" class="modal__icon">
+      <svg width="29" height="28" class="modal__icon">
         <use href="./svg/floppy.svg#floppy"></use>
       </svg>
-      <span class="save-button__text">Сохранить на память</span>
+      <span class="save-button-text">Сохранить на память</span>
     </button>
+    </div>
 </main>
 <dialog class="modal" id="save-dialog">
   <div class="modal__content">
     <div class="modal__columns">
       <div class="modal__column">
-        <svg width="39" height="39" class="modal__icon">
+        <svg width="39" height="39" class="modal__icon" >
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
       </div>
       <div class="modal__column">
-        <p class="modal__text">Вставьте дискету, чтобы продолжить</p>
+        <p class="modal__text">вставьте дискету, чтобы продолжить</p>
       </div>
     </div>
     <form method="dialog">
-      <button type="submit" class="modal__button" autofocus>
-        <span class="button__text">ОK</span>
+      <button type="submit" class="modal__button button" autofocus>
+        <span class="button-text">ОK</span>
       </button>
     </form>
   </div>
