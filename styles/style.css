@@ -122,7 +122,6 @@ p {
   transition: border-color 0.3s ease;
   cursor: pointer;
   appearance: none;
-  background: none;
   margin-top: 4px;
   margin-right: 4px;
 
@@ -223,7 +222,7 @@ p {
 
 .modal {
   border: 2px solid currentColor;
-  padding: 0;
+  padding: 0 30px;
   max-inline-size: 353px;
   background: var(--bg-color);
   box-sizing: border-box;
@@ -236,29 +235,21 @@ p {
 }
 
 .modal__content {
-  padding: 24px 16px;
+  margin: 30px 0;
 }
 
 .modal__icon {
-  margin-top: 12px;
-  margin-right: 10px;
+  margin: 12px 20px 12px 0px;
 }
 
 .modal__columns {
   display: flex;
   align-items: flex-start;
   margin-bottom: 30px;
-  gap: 12px;
-}
-
-.modal__column:first-child {
-  display: flex;
-  align-items: flex-start;
 }
 
 .modal__text {
   margin-bottom: 0;
-  margin-right: 30px;
   font-weight: var(--text-weight);
   font-family: var(--accent-font);
   text-transform: uppercase;
@@ -354,7 +345,7 @@ p {
     margin-bottom: 10px;
   }
 
-  .save-button-text{
+  .save-button-text {
     position: relative;
     z-index: 1;
     color: var(--bg-color);
@@ -362,5 +353,9 @@ p {
     font-family: var(--accent-font);
     font-size: 14px;
     margin-bottom: 10px;
+  }
+
+  .modal {
+    padding: 0 42px;
   }
 }
