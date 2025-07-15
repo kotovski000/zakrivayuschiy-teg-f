@@ -209,7 +209,7 @@ p {
   transform: translateX(0);
 }
 
-.button-text {
+.button__text {
   position: relative;
   z-index: 1;
   color: var(--bg-color);
