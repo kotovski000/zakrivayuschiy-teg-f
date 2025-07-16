@@ -310,7 +310,7 @@ p {
 }
 
 @media (width <= 375px) {
-  .header{
+  .header {
     width: var(--mobile-widdth);
     height: 327px;
     padding: 120px 14px;
