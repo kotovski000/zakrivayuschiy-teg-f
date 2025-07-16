@@ -245,7 +245,7 @@
 }
 
 .modal__icon {
-  margin: 12px 20px 12px 0px;
+  margin: 12px 20px 12px 0;
 }
 
 .modal__columns {
@@ -356,5 +356,7 @@
 
   .modal {
     padding: 0 42px;
+    margin-right: 17px;
+    margin-left: 17px;
   }
 }
