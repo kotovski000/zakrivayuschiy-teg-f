@@ -234,15 +234,14 @@
   box-sizing: border-box;
   font-family: var(--accent-font);
   color: #000;
-  opacity: 0.5;
 }
 
 .modal[open]::backdrop {
-  /*background-color: rgba(0,0,0,0.75);*/
+  background-color: rgba(0,0,0,0.75);
 }
 
 .modal__content {
-  margin: 30px 10px;
+  margin: 30px 0;
 }
 
 .modal__icon {
@@ -272,7 +271,7 @@
   font-family: var(--accent-font);
   font-size: 14px;
   font-weight: var(--text-weight);
-  padding: 9px 0 10px 0;
+  padding: 9px 0 7px 0;
   box-sizing: border-box;
   cursor: pointer;
   text-transform: uppercase;
@@ -353,6 +352,14 @@
 
   .save-button-text {
     margin-bottom: 10px;
+  }
+
+  .modal__content {
+    margin: 30px 10px;
+  }
+
+  .modal__button {
+    padding: 9px 0 10px 0;
   }
 
   .modal {
